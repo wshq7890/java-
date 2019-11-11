@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>3.反转字符串中的元音字母 | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../../../LeetCode/算法思想/双指针/2.两数平方和.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.1.1.3"
+        data-chapter-title="3.反转字符串中的元音字母"
+        data-filepath="LeetCode/算法思想/双指针/3.反转字符串中的元音字母.md"
+        data-basepath="../../.."
+        data-revision="Mon Nov 11 2019 20:18:37 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="剑指Offer/index.html">
+            
+                
+                    <a href="../../../剑指Offer/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        剑指Offer
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="剑指Offer/3.数组中重复的数字.html">
+            
+                
+                    <a href="../../../剑指Offer/3.数组中重复的数字.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        3.数组中重复的数字
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="剑指Offer/4.二维数组中的查找.html">
+            
+                
+                    <a href="../../../剑指Offer/4.二维数组中的查找.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        4.二维数组中的查找
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="剑指Offer/5.替换空格.html">
+            
+                
+                    <a href="../../../剑指Offer/5.替换空格.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        5.替换空格
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="剑指Offer/6.从尾到头打印链表.html">
+            
+                
+                    <a href="../../../剑指Offer/6.从尾到头打印链表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        6.从尾到头打印链表
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="LeetCode/index.html">
+            
+                
+                    <a href="../../../LeetCode/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        LeetCode
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="LeetCode/算法思想/index.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        算法思想
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="LeetCode/算法思想/双指针/index.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                        双指针
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.1" data-path="LeetCode/算法思想/双指针/1.有序数组的TwoSum.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/1.有序数组的TwoSum.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.1.</b>
+                        
+                        1.有序数组的TwoSum
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.2" data-path="LeetCode/算法思想/双指针/2.两数平方和.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/2.两数平方和.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.2.</b>
+                        
+                        2.两数平方和
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.1.3" data-path="LeetCode/算法思想/双指针/3.反转字符串中的元音字母.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/3.反转字符串中的元音字母.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.3.</b>
+                        
+                        3.反转字符串中的元音字母
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="3&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5143;&#x97F3;&#x5B57;&#x6BCD;">3.&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5143;&#x97F3;&#x5B57;&#x6BCD;</h1>
+<ol>
+<li><p>Reverse Vowels of a String (Easy) </p>
+<p><a href="https://leetcode-cn.com/problems/reverse-vowels-of-a-string/description/" target="_blank">&#x529B;&#x6263;</a> </p>
+</li>
+</ol>
+<h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h2>
+<pre><code class="lang-html">Given s = &quot;leetcode&quot;, return &quot;leotcede&quot;.
+</code></pre>
+<h2 id="&#x601D;&#x8DEF;">&#x601D;&#x8DEF;</h2>
+<p>&#x4F7F;&#x7528;&#x53CC;&#x6307;&#x9488;&#xFF0C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x4ECE;&#x5934;&#x5411;&#x5C3E;&#x904D;&#x5386;&#xFF0C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x4ECE;&#x5C3E;&#x5230;&#x5934;&#x904D;&#x5386;&#xFF0C;&#x5F53;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#x90FD;&#x904D;&#x5386;&#x5230;&#x5143;&#x97F3;&#x5B57;&#x7B26;&#x65F6;&#xFF0C;&#x4EA4;&#x6362;&#x8FD9;&#x4E24;&#x4E2A;&#x5143;&#x97F3;&#x5B57;&#x7B26;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x5FEB;&#x901F;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x662F;&#x4E0D;&#x662F;&#x5143;&#x97F3;&#x5B57;&#x7B26;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5168;&#x90E8;&#x5143;&#x97F3;&#x5B57;&#x7B26;&#x6DFB;&#x52A0;&#x5230;&#x96C6;&#x5408; HashSet &#x4E2D;&#xFF0C;&#x4ECE;&#x800C;&#x4EE5; O(1) &#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8FDB;&#x884C;&#x8BE5;&#x64CD;&#x4F5C;&#x3002;</p>
+<ul>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A; O(N)&#xFF1A;&#x53EA;&#x9700;&#x8981;&#x904D;&#x5386;&#x6240;&#x6709;&#x5143;&#x7D20;&#x4E00;&#x6B21;</li>
+<li>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6; O(1)&#xFF1A;&#x53EA;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x989D;&#x5916;&#x53D8;&#x91CF;</li>
+</ul>
+<h2 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h2>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> HashSet&lt;Character&gt; vowels = <span class="hljs-keyword">new</span> HashSet&lt;&gt;(Arrays.asList(<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;e&apos;</span>,<span class="hljs-string">&apos;i&apos;</span>,<span class="hljs-string">&apos;o&apos;</span>,<span class="hljs-string">&apos;u&apos;</span>,<span class="hljs-string">&apos;A&apos;</span>,<span class="hljs-string">&apos;E&apos;</span>,<span class="hljs-string">&apos;I&apos;</span>,<span class="hljs-string">&apos;O&apos;</span>,<span class="hljs-string">&apos;U&apos;</span>));
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">reverseVowels</span><span class="hljs-params">(String s)</span> </span>{
+        <span class="hljs-keyword">if</span>(s==<span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">int</span> j = s.length()-<span class="hljs-number">1</span>;
+        <span class="hljs-keyword">char</span>[] result = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[s.length()];
+        <span class="hljs-keyword">while</span>(i &lt;= j){
+            <span class="hljs-keyword">char</span> ci = s.charAt(i);
+            <span class="hljs-keyword">char</span> cj = s.charAt(j);
+            <span class="hljs-keyword">if</span>(!vowels.contains(ci)){
+                result[i++] = ci;
+            }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!vowels.contains(cj)){
+                result[j--] = cj;
+            }<span class="hljs-keyword">else</span>{
+                result[i++] = cj;
+                result[j--] = ci;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> String(result);
+    }
+}
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../../LeetCode/算法思想/双指针/2.两数平方和.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.两数平方和"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../../../gitbook/app.js"></script>
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

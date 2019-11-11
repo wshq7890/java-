@@ -1,0 +1,423 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>1.有序数组的TwoSum | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../../LeetCode/算法思想/双指针/2.两数平方和.html" />
+    
+    
+    <link rel="prev" href="../../../LeetCode/算法思想/双指针/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.1.1.1"
+        data-chapter-title="1.有序数组的TwoSum"
+        data-filepath="LeetCode/算法思想/双指针/1.有序数组的TwoSum.md"
+        data-basepath="../../.."
+        data-revision="Mon Nov 11 2019 20:18:37 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="剑指Offer/index.html">
+            
+                
+                    <a href="../../../剑指Offer/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        剑指Offer
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="剑指Offer/3.数组中重复的数字.html">
+            
+                
+                    <a href="../../../剑指Offer/3.数组中重复的数字.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        3.数组中重复的数字
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="剑指Offer/4.二维数组中的查找.html">
+            
+                
+                    <a href="../../../剑指Offer/4.二维数组中的查找.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        4.二维数组中的查找
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="剑指Offer/5.替换空格.html">
+            
+                
+                    <a href="../../../剑指Offer/5.替换空格.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        5.替换空格
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="剑指Offer/6.从尾到头打印链表.html">
+            
+                
+                    <a href="../../../剑指Offer/6.从尾到头打印链表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        6.从尾到头打印链表
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="LeetCode/index.html">
+            
+                
+                    <a href="../../../LeetCode/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        LeetCode
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="LeetCode/算法思想/index.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        算法思想
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="LeetCode/算法思想/双指针/index.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                        双指针
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1.1.1" data-path="LeetCode/算法思想/双指针/1.有序数组的TwoSum.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/1.有序数组的TwoSum.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.1.</b>
+                        
+                        1.有序数组的TwoSum
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.2" data-path="LeetCode/算法思想/双指针/2.两数平方和.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/2.两数平方和.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.2.</b>
+                        
+                        2.两数平方和
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.3" data-path="LeetCode/算法思想/双指针/3.反转字符串中的元音字母.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/3.反转字符串中的元音字母.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.3.</b>
+                        
+                        3.反转字符串中的元音字母
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="1&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x7684;twosum">1.&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x7684;TwoSum</h1>
+<p>167.Two Sum II - Input array is sorted (Easy)  <a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/" target="_blank">Leetcode</a> / <a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/" target="_blank">&#x529B;&#x6263;</a> </p>
+<h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h2>
+<p>&#x5728;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x4E2D;&#x627E;&#x51FA;&#x4E24;&#x4E2A;&#x6570;&#xFF0C;&#x4F7F;&#x5B83;&#x4EEC;&#x7684;&#x548C;&#x4E3A; target&#x3002; </p>
+<p> &#x51FD;&#x6570;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x8FD9;&#x4E24;&#x4E2A;&#x4E0B;&#x6807;&#x503C; index1 &#x548C; index2&#xFF0C;&#x5176;&#x4E2D; index1 &#x5FC5;&#x987B;&#x5C0F;&#x4E8E; index2<em>&#x3002;</em> </p>
+<p>&#x200B;    &#x8BF4;&#x660E;&#xFF1A;</p>
+<ol>
+<li><p>&#x8FD4;&#x56DE;&#x7684;&#x4E0B;&#x6807;&#x503C;&#xFF08;index1 &#x548C; index2&#xFF09;&#x4E0D;&#x662F;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x7684;&#x3002;     </p>
+</li>
+<li><p>&#x4F60;&#x53EF;&#x4EE5;&#x5047;&#x8BBE;&#x6BCF;&#x4E2A;&#x8F93;&#x5165;&#x53EA;&#x5BF9;&#x5E94;&#x552F;&#x4E00;&#x7684;&#x7B54;&#x6848;&#xFF0C;&#x800C;&#x4E14;&#x4F60;&#x4E0D;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x5143;&#x7D20;&#x3002; </p>
+</li>
+</ol>
+<pre><code class="lang-html">Input: numbers={2, 7, 11, 15}, target=9
+Output: index1=1, index2=2
+</code></pre>
+<h2 id="&#x53CC;&#x6307;&#x9488;&#x6CD5;">&#x53CC;&#x6307;&#x9488;&#x6CD5;</h2>
+<p>&#x7528;&#x53CC;&#x6307;&#x9488;&#xFF0C;&#x4E00;&#x4E2A;&#x6307;&#x9488;left&#x6307;&#x5411;&#x8F83;&#x5C0F;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x4E00;&#x4E2A;&#x6307;&#x9488;right&#x6307;&#x5411;&#x8F83;&#x5927;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x7528;sum&#x8BB0;&#x5F55;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#x6307;&#x5411;&#x6570;&#x5B57;&#x7684;&#x548C;&#x3002;</p>
+<ul>
+<li><p>&#x5982;&#x679C;sum == target &#xFF0C;&#x8FD4;&#x56DE;{left+1,right+1}&#xFF1B;</p>
+</li>
+<li><p>&#x5982;&#x679C;sum&lt;target&#xFF0C;left&#x53F3;&#x79FB;</p>
+</li>
+<li>&#x5982;&#x679C;sum &gt; target&#xFF0C;right&#x5DE6;&#x79FB;&#x3002;</li>
+</ul>
+<p>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;O&#xFF08;n&#xFF09; &#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;O&#xFF08;1&#xFF09;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] twoSum(<span class="hljs-keyword">int</span>[] numbers, <span class="hljs-keyword">int</span> target) {
+    <span class="hljs-keyword">if</span>(numbers == <span class="hljs-keyword">null</span> || numbers.length == <span class="hljs-number">0</span>){
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> right = numbers.length-<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">int</span> sum;
+    <span class="hljs-keyword">while</span>(left &lt; right){
+        sum = numbers[left] + numbers[right];
+        <span class="hljs-keyword">if</span>(sum == target){
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{left+<span class="hljs-number">1</span>,right+<span class="hljs-number">1</span>};
+        }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(sum &lt; target){
+            left++;
+        }<span class="hljs-keyword">else</span>{
+            right--;
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+}
+</code></pre>
+<h2 id="hashmap&#x4E0D;&#x63A8;&#x8350;">HashMap(&#x4E0D;&#x63A8;&#x8350;)</h2>
+<p>&#x7528;&#x4E00;&#x5F20; HashMap &#x8BB0;&#x5F55;&#xFF1A;key &#x503C;&#x4E3A;&#x76EE;&#x6807;&#x503C;&#x51CF;&#x53BB;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x503C; temp = target-numbers[i]&#xFF0C;value &#x503C;&#x4E3A; temp &#x6240;&#x5BF9;&#x5E94;&#x7684;&#x4E0B;&#x6807;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x904D;&#x5386;&#x5230;&#x67D0;&#x4E2A; i &#xFF0C;&#x4F7F;&#x5F97; numbers[i] &#x662F; map &#x4E2D; key &#x503C;&#xFF08;&#x5373;&#x6B64;&#x65F6;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x503C;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8981;&#x627E;&#x7684;&#x90A3;&#x4E2A;&#x503C;&#xFF09;&#xFF0C;&#x8FD4;&#x56DE;&#x8FD9;&#x65F6;&#x7684; [value+1&#xFF0C;i+1]</p>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x5229;&#x7528;&#x5230;&#x6570;&#x7EC4;&#x6709;&#x5E8F;&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x6D88;&#x8017;&#x4E86;&#x989D;&#x5916;&#x7684;&#x7A7A;&#x95F4;&#x3002;</p>
+<p>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;O&#xFF08;n&#xFF09; &#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;O(n)</p>
+<pre><code class="lang-java">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] twoSum(<span class="hljs-keyword">int</span>[] numbers, <span class="hljs-keyword">int</span> target) {
+        <span class="hljs-keyword">if</span>(numbers == <span class="hljs-keyword">null</span> || numbers.length &lt; <span class="hljs-number">1</span>){
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+        HashMap&lt;Integer,Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+        map.put(target-numbers[<span class="hljs-number">0</span>],<span class="hljs-number">0</span>);
+        <span class="hljs-keyword">int</span> temp = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; numbers.length ;i++){
+            temp = target - numbers[i];
+            <span class="hljs-keyword">if</span>(map.containsKey(numbers[i])){
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{map.get(numbers[i])+<span class="hljs-number">1</span>,i+<span class="hljs-number">1</span>};
+            }<span class="hljs-keyword">else</span>{
+                map.put(temp,i);
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../../LeetCode/算法思想/双指针/index.html" class="navigation navigation-prev " aria-label="Previous page: 双指针"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../../LeetCode/算法思想/双指针/2.两数平方和.html" class="navigation navigation-next " aria-label="Next page: 2.两数平方和"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../../gitbook/app.js"></script>
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
