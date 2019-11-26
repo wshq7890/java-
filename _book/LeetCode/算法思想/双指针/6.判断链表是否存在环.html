@@ -1,0 +1,1142 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>6.判断链表是否存在环 | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../../LeetCode/算法思想/双指针/7.最长子序列.html" />
+    
+    
+    <link rel="prev" href="../../../LeetCode/算法思想/双指针/5.合并两个有序数组.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.1.1.6"
+        data-chapter-title="6.判断链表是否存在环"
+        data-filepath="LeetCode/算法思想/双指针/6.判断链表是否存在环.md"
+        data-basepath="../../.."
+        data-revision="Sat Nov 23 2019 21:43:33 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="剑指Offer/index.html">
+            
+                
+                    <a href="../../../剑指Offer/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        剑指Offer
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="剑指Offer/3.数组中重复的数字.html">
+            
+                
+                    <a href="../../../剑指Offer/3.数组中重复的数字.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        3.数组中重复的数字
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="剑指Offer/4.二维数组中的查找.html">
+            
+                
+                    <a href="../../../剑指Offer/4.二维数组中的查找.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        4.二维数组中的查找
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="剑指Offer/5.替换空格.html">
+            
+                
+                    <a href="../../../剑指Offer/5.替换空格.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        5.替换空格
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="剑指Offer/6.从尾到头打印链表.html">
+            
+                
+                    <a href="../../../剑指Offer/6.从尾到头打印链表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        6.从尾到头打印链表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="剑指Offer/7.重建二叉树.html">
+            
+                
+                    <a href="../../../剑指Offer/7.重建二叉树.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        7.重建二叉树
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="剑指Offer/8.二叉树的下一个节点.html">
+            
+                
+                    <a href="../../../剑指Offer/8.二叉树的下一个节点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        8.二叉树的下一个节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="剑指Offer/9.用两个栈实现队列.html">
+            
+                
+                    <a href="../../../剑指Offer/9.用两个栈实现队列.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        9.用两个栈实现队列
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="剑指Offer/10.1 斐波那契数列.html">
+            
+                
+                    <a href="../../../剑指Offer/10.1 斐波那契数列.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        10.1 斐波那契数列
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="剑指Offer/10.2 矩形覆盖.html">
+            
+                
+                    <a href="../../../剑指Offer/10.2 矩形覆盖.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        10.2 矩形覆盖
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="剑指Offer/10.3 跳台阶.html">
+            
+                
+                    <a href="../../../剑指Offer/10.3 跳台阶.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        10.3 跳台阶
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="剑指Offer/10.4 变态跳台阶.html">
+            
+                
+                    <a href="../../../剑指Offer/10.4 变态跳台阶.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.11.</b>
+                        
+                        10.4 变态跳台阶
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="剑指Offer/11.旋转数组的最小数字.html">
+            
+                
+                    <a href="../../../剑指Offer/11.旋转数组的最小数字.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.12.</b>
+                        
+                        11.旋转数组的最小数字
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="剑指Offer/12.矩阵中的路径.html">
+            
+                
+                    <a href="../../../剑指Offer/12.矩阵中的路径.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.13.</b>
+                        
+                        12.矩阵中的路径
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="剑指Offer/13.机器人的运动范围.html">
+            
+                
+                    <a href="../../../剑指Offer/13.机器人的运动范围.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.14.</b>
+                        
+                        13.机器人的运动范围
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="剑指Offer/14.剪绳子.html">
+            
+                
+                    <a href="../../../剑指Offer/14.剪绳子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.15.</b>
+                        
+                        14.剪绳子
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="剑指Offer/15.二进制中1的个数.html">
+            
+                
+                    <a href="../../../剑指Offer/15.二进制中1的个数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.16.</b>
+                        
+                        15.二进制中1的个数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="剑指Offer/16.数值的整数次方.html">
+            
+                
+                    <a href="../../../剑指Offer/16.数值的整数次方.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.17.</b>
+                        
+                        16.数值的整数次方
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="剑指Offer/17.打印从1到最大的N位数.html">
+            
+                
+                    <a href="../../../剑指Offer/17.打印从1到最大的N位数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.18.</b>
+                        
+                        17.打印从1到最大的N位数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="剑指Offer/18.1在O（1）时间内删除链表节点.html">
+            
+                
+                    <a href="../../../剑指Offer/18.1在O（1）时间内删除链表节点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.19.</b>
+                        
+                        18.1在O（1）时间内删除链表节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="剑指Offer/18.2删除链表中重复节点.html">
+            
+                
+                    <a href="../../../剑指Offer/18.2删除链表中重复节点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.20.</b>
+                        
+                        18.2删除链表中重复节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="剑指Offer/19.正则表达式匹配.html">
+            
+                
+                    <a href="../../../剑指Offer/19.正则表达式匹配.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.21.</b>
+                        
+                        19.正则表达式匹配
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="剑指Offer/20.表示数值的字符串.html">
+            
+                
+                    <a href="../../../剑指Offer/20.表示数值的字符串.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.22.</b>
+                        
+                        20.表示数值的字符串
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="剑指Offer/21.调整数组顺序，使奇数位于偶数前面.html">
+            
+                
+                    <a href="../../../剑指Offer/21.调整数组顺序，使奇数位于偶数前面.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.23.</b>
+                        
+                        21.调整数组顺序，使奇数位于偶数前面
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="剑指Offer/22.链表中倒数第K个节点.html">
+            
+                
+                    <a href="../../../剑指Offer/22.链表中倒数第K个节点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.24.</b>
+                        
+                        22.链表中倒数第K个节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="剑指Offer/23.链表中环的入口节点.html">
+            
+                
+                    <a href="../../../剑指Offer/23.链表中环的入口节点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.25.</b>
+                        
+                        23.链表中环的入口节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="剑指Offer/24.反转链表.html">
+            
+                
+                    <a href="../../../剑指Offer/24.反转链表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.26.</b>
+                        
+                        24.反转链表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="剑指Offer/25.合并两个排序的链表.html">
+            
+                
+                    <a href="../../../剑指Offer/25.合并两个排序的链表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.27.</b>
+                        
+                        25.合并两个排序的链表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="剑指Offer/26.树的子结构.html">
+            
+                
+                    <a href="../../../剑指Offer/26.树的子结构.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.28.</b>
+                        
+                        26.树的子结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="剑指Offer/27.二叉树的镜像.html">
+            
+                
+                    <a href="../../../剑指Offer/27.二叉树的镜像.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.29.</b>
+                        
+                        27.二叉树的镜像
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="剑指Offer/28.对称的二叉树.html">
+            
+                
+                    <a href="../../../剑指Offer/28.对称的二叉树.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.30.</b>
+                        
+                        28.对称的二叉树
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="剑指Offer/29.顺时针打印矩阵.html">
+            
+                
+                    <a href="../../../剑指Offer/29.顺时针打印矩阵.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.31.</b>
+                        
+                        29.顺时针打印矩阵
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="剑指Offer/30.包含min函数的栈.html">
+            
+                
+                    <a href="../../../剑指Offer/30.包含min函数的栈.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.32.</b>
+                        
+                        30.包含min函数的栈
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="剑指Offer/31.栈的压入、弹出序列.html">
+            
+                
+                    <a href="../../../剑指Offer/31.栈的压入、弹出序列.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.33.</b>
+                        
+                        31.栈的压入、弹出序列
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="剑指Offer/32.1从上往下打印二叉树.html">
+            
+                
+                    <a href="../../../剑指Offer/32.1从上往下打印二叉树.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.34.</b>
+                        
+                        32.1从上往下打印二叉树
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="剑指Offer/32.2把二叉树打印成多行.html">
+            
+                
+                    <a href="../../../剑指Offer/32.2把二叉树打印成多行.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.35.</b>
+                        
+                        32.2把二叉树打印成多行
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="剑指Offer/32.3按之字形打印二叉树.html">
+            
+                
+                    <a href="../../../剑指Offer/32.3按之字形打印二叉树.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.36.</b>
+                        
+                        32.3按之字形打印二叉树
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="LeetCode/index.html">
+            
+                
+                    <a href="../../../LeetCode/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        LeetCode
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="LeetCode/算法思想/index.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        算法思想
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="LeetCode/算法思想/双指针/index.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                        双指针
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.1" data-path="LeetCode/算法思想/双指针/1.有序数组的TwoSum.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/1.有序数组的TwoSum.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.1.</b>
+                        
+                        1.有序数组的TwoSum
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.2" data-path="LeetCode/算法思想/双指针/2.两数平方和.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/2.两数平方和.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.2.</b>
+                        
+                        2.两数平方和
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.3" data-path="LeetCode/算法思想/双指针/3.反转字符串中的元音字母.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/3.反转字符串中的元音字母.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.3.</b>
+                        
+                        3.反转字符串中的元音字母
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.4" data-path="LeetCode/算法思想/双指针/4.验证回文字符串 Ⅱ.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/4.验证回文字符串 Ⅱ.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.4.</b>
+                        
+                        4.验证回文字符串 Ⅱ
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.5" data-path="LeetCode/算法思想/双指针/5.合并两个有序数组.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/5.合并两个有序数组.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.5.</b>
+                        
+                        5.合并两个有序数组
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.1.6" data-path="LeetCode/算法思想/双指针/6.判断链表是否存在环.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/6.判断链表是否存在环.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.6.</b>
+                        
+                        6.判断链表是否存在环
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.7" data-path="LeetCode/算法思想/双指针/7.最长子序列.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/双指针/7.最长子序列.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.7.</b>
+                        
+                        7.最长子序列
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="LeetCode/算法思想/排序/index.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/排序/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.2.</b>
+                        
+                        排序
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.2.1" data-path="LeetCode/算法思想/排序/Kth Element.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/排序/Kth Element.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.2.1.</b>
+                        
+                        Kth Element
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.2" data-path="LeetCode/算法思想/排序/桶排序-出现频率最多的k个元素.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/排序/桶排序-出现频率最多的k个元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.2.2.</b>
+                        
+                        桶排序-出现频率最多的k个元素
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="LeetCode/算法思想/动态规划/index.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/动态规划/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.3.</b>
+                        
+                        动态规划
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.3.1" data-path="LeetCode/算法思想/动态规划/斐波那契数列/index.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/动态规划/斐波那契数列/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.3.1.</b>
+                        
+                        斐波那契数列
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.3.1.1" data-path="LeetCode/算法思想/动态规划/斐波那契数列/1.爬楼梯.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/动态规划/斐波那契数列/1.爬楼梯.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.3.1.1.</b>
+                        
+                        1.爬楼梯
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.1.2" data-path="LeetCode/算法思想/动态规划/斐波那契数列/2.强盗抢劫.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/动态规划/斐波那契数列/2.强盗抢劫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.3.1.2.</b>
+                        
+                        2.强盗抢劫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.1.3" data-path="LeetCode/算法思想/动态规划/斐波那契数列/3.强盗在环形街区抢劫.html">
+            
+                
+                    <a href="../../../LeetCode/算法思想/动态规划/斐波那契数列/3.强盗在环形街区抢劫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.3.1.3.</b>
+                        
+                        3.强盗在环形街区抢劫
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="LeetCode刷题/index.html">
+            
+                
+                    <a href="../../../LeetCode刷题/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        LeetCode刷题
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="LeetCode刷题/回溯法/index.html">
+            
+                
+                    <a href="../../../LeetCode刷题/回溯法/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        回溯法
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="LeetCode刷题/回溯法/46.全排列.html">
+            
+                
+                    <a href="../../../LeetCode刷题/回溯法/46.全排列.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.1.</b>
+                        
+                        46.全排列
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="6&#x5224;&#x65AD;&#x94FE;&#x8868;&#x662F;&#x5426;&#x5B58;&#x5728;&#x73AF;">6.&#x5224;&#x65AD;&#x94FE;&#x8868;&#x662F;&#x5426;&#x5B58;&#x5728;&#x73AF;</h1>
+<h2 id="141&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x73AF;">141.&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x73AF;</h2>
+<p> <a href="https://leetcode-cn.com/problems/linked-list-cycle/description/" target="_blank">&#x529B;&#x6263;141</a> </p>
+<h3 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h3>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#xFF0C;&#x5224;&#x65AD;&#x94FE;&#x8868;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x73AF;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x8868;&#x793A;&#x7ED9;&#x5B9A;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x73AF;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x6574;&#x6570; pos &#x6765;&#x8868;&#x793A;&#x94FE;&#x8868;&#x5C3E;&#x8FDE;&#x63A5;&#x5230;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x7D22;&#x5F15;&#x4ECE; 0 &#x5F00;&#x59CB;&#xFF09;&#x3002; &#x5982;&#x679C; pos &#x662F; -1&#xFF0C;&#x5219;&#x5728;&#x8BE5;&#x94FE;&#x8868;&#x4E2D;&#x6CA1;&#x6709;&#x73AF;&#x3002;</p>
+<h3 id="&#x601D;&#x8DEF;">&#x601D;&#x8DEF;</h3>
+<h3 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h3>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">hasCycle</span><span class="hljs-params">(ListNode head)</span> </span>{
+    <span class="hljs-keyword">if</span>(head == <span class="hljs-keyword">null</span>){
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+    ListNode slow = head;
+    ListNode fast = head;
+    do{
+        <span class="hljs-keyword">if</span>(fast == <span class="hljs-keyword">null</span> || fast.next == <span class="hljs-keyword">null</span>){
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        }
+        slow = slow.next;
+        fast = fast.next.next;
+    }<span class="hljs-keyword">while</span>(slow != fast);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}
+</code></pre>
+<h2 id="142&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x5165;&#x73AF;&#x8282;&#x70B9;">142.&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x5165;&#x73AF;&#x8282;&#x70B9;</h2>
+<h3 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h3>
+<p>&#x5982;&#x679C;&#x94FE;&#x8868;&#x6709;&#x73AF;&#xFF0C;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x5165;&#x73AF;&#x8282;&#x70B9;</p>
+<h3 id="&#x601D;&#x8DEF;">&#x601D;&#x8DEF;</h3>
+<p>&#x5FEB;&#x6162;&#x6307;&#x9488;&#x3002;</p>
+<p>&#x5FEB;&#x6307;&#x9488;&#x6BCF;&#x6B21;&#x8D70;&#x4E24;&#x6B65;&#xFF0C;&#x6162;&#x6307;&#x9488;&#x6BCF;&#x6B21;&#x8D70;&#x4E00;&#x6B65;&#x3002;</p>
+<p>&#x5FEB;&#x6307;&#x9488;&#x8D70;&#x5230;&#x548C;&#x6162;&#x6307;&#x9488;&#x7B2C;&#x4E00;&#x6B21;&#x76F8;&#x9047;&#xFF0C;&#x5FEB;&#x6307;&#x9488;&#x56DE;&#x5230;&#x5934;&#x7ED3;&#x70B9;&#x3002;&#x7136;&#x540E;&#x6BCF;&#x6B21;&#x8D70;&#x4E00;&#x6B65;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x76F8;&#x9047;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5373;&#x4E3A;&#x5165;&#x73AF;&#x8282;&#x70B9;&#x3002;</p>
+<h3 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h3>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">detectCycle</span><span class="hljs-params">(ListNode head)</span> </span>{
+    <span class="hljs-keyword">if</span>(head == <span class="hljs-keyword">null</span>){
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+    ListNode slow = head;
+    ListNode fast = head;
+    do{
+        <span class="hljs-keyword">if</span>(fast == <span class="hljs-keyword">null</span> || fast.next == <span class="hljs-keyword">null</span>){
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+        slow = slow.next;
+        fast = fast.next.next;
+    }<span class="hljs-keyword">while</span>(slow != fast);
+    fast = head;
+    <span class="hljs-keyword">while</span>(slow != fast){
+        slow = slow.next;
+        fast = fast.next;
+    }
+    <span class="hljs-keyword">return</span> slow;
+}
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../../LeetCode/算法思想/双指针/5.合并两个有序数组.html" class="navigation navigation-prev " aria-label="Previous page: 5.合并两个有序数组"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../../LeetCode/算法思想/双指针/7.最长子序列.html" class="navigation navigation-next " aria-label="Next page: 7.最长子序列"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../../gitbook/app.js"></script>
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
